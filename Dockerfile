@@ -32,5 +32,5 @@ ADD https://github.com/Tencent/puerts/releases/download/V8_8.4.371.19_2021_10_29
 ADD scripts /root/scripts
 
 CMD cd /root/puerts/unity/native_src \
-    tar -xzf /roo/v8_bin.tgz -C v8 \
+    && tar -xzf /roo/v8_bin.tgz \
     && node /root/scripts/make_android.js $ENGINE $CMAKE_OPTIONS

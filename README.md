@@ -14,6 +14,7 @@ docker build . -t puerts:unity-android
 # 需要将你的 puerts 源码目录挂载到 /root/puerts
 docker run --rm -v /mnt/d/dev/puerts:/root/puerts puerts:unity-android
 ```
+4. 构建结果放在 `<puerts源码>/unity/Assets/Plugins` 目录内
 
 ### 可选环境变量参数
 - `-e ENGINE=v8` 要构建的JS引擎类型，目前仅支持`v8`
