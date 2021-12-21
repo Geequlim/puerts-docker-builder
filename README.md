@@ -6,7 +6,7 @@
 0. 获取 puerts 的源码
 1. 构建 Docker 镜像
 ```bash
-docker build . puerts:unity-android
+docker build . -t puerts:unity-android
 ```
 2. 修改 `unity/native_src/CMakeLists.txt` 调整构建配置
 3. 通过 Docker 进行构建
