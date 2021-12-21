@@ -27,11 +27,10 @@ RUN unzip -q /root/ndk.zip && rm /root/ndk.zip
 
 # 添加 V8 静态库
 ADD https://github.com/Tencent/puerts/releases/download/V8_8.4.371.19_2021_10_29/v8_bin_8.4.371.19.tgz /roo/v8_bin.tgz
-RUN tar -xzf /roo/v8_bin.tgz && rm /roo/v8_bin.tgz
 
 # 添加构建脚本
 ADD scripts /root/scripts
 
 CMD cd /root/puerts/unity/native_src \
-    ln -s /root/v8 v8 \
+    tar -xzf /roo/v8_bin.tgz -C v8 \
     && node /root/scripts/make_android.js $ENGINE $CMAKE_OPTIONS
